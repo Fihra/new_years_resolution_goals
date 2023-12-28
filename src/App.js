@@ -1,23 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
+import GoalForm from './components/GoalForm';
+import { GoalProvider } from './context/goalContext';
+import GoalContainer from './components/GoalContainer';
 
-function App() {
+const App = () => {
+  const date = new Date();
+
+  console.log(date.getFullYear());
+
   return (
     <div className="App">
+      <GoalProvider>
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>New Years Resolution</h1>
+        <h3>What's your goal for {date.getFullYear() + 1}?</h3>
+        <GoalForm/>
       </header>
+      <GoalContainer/>
+      </GoalProvider>
     </div>
   );
 }
