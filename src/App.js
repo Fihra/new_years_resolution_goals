@@ -3,6 +3,7 @@ import './App.css';
 import GoalForm from './components/GoalForm';
 import { GoalProvider } from './context/goalContext';
 import GoalContainer from './components/GoalContainer';
+import MonthContainer from './components/MonthContainer';
 
 const App = () => {
   const date = new Date();
@@ -14,6 +15,7 @@ const App = () => {
       <GoalProvider>
       <header className="App-header">
         <h1>New Years Resolution</h1>
+        <MonthContainer/>
         <h3>What's your goal for {date.getFullYear() + 1}?</h3>
         <GoalForm/>
       </header>

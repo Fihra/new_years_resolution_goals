@@ -31,3 +31,18 @@
     transform: rotate(360deg);
   }
 }
+
+.goal-container {
+  display: flex;
+  list-style-type: none;
+  /* justify-content: space-between; */
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.goal-card {
+  border: 1px solid white;
+  padding: 20px;
+  word-wrap: normal;
+  width: 20%;
+}

@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import Draggable from 'react-draggable';
 import { GoalContext } from '../context/goalContext';
 
 const GoalContainer = () => {
@@ -6,13 +7,13 @@ const GoalContainer = () => {
 
     const showGoals = () => {
         return goals.map((goal, i) => {
-            return <li key={i}>{goal}</li>
+            return <Draggable><li className="goal-card" key={i}>{goal}</li></Draggable>
         })
     }
 
     return(
         <>
-            <ul>
+            <ul className="goal-container">
             {showGoals()}
             </ul>
         </>

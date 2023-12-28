@@ -19,13 +19,36 @@ export const GoalProvider = ({children}) => {
             type: ACTIONS.SUBMIT_GOAL
         })
     }
+    
+    const moveGoalToMonth = (selectedMonth, selectedGoal) => {
+        dispatch({
+            type: ACTIONS.MOVE_GOAL_TO_MONTH,
+            payload: {
+                monthName: selectedMonth,
+                currentGoal: selectedGoal
+            }
+        })
+    }
 
     const value = {
         goals: state.goals,
         newGoal: state.newGoal,
         currentGoal: state.currentGoal,
+        moveGoalToMonth,
         createGoal,
-        submitGoal
+        submitGoal,
+        januaryGoals: state.januaryGoals,
+        februaryGoals: state.februaryGoals,
+        marchGoals: state.marchGoals,
+        aprilGoals: state.aprilGoals,
+        mayGoals: state.mayGoals,
+        juneGoals: state.juneGoals,
+        julyGoals: state.julyGoals,
+        augustGoals: state.augustGoals,
+        septemberGoals: state.septemberGoals,
+        octoberGoals: state.octoberGoals,
+        novemberGoals: state.novemberGoals,
+        decemberGoals: state.decemberGoals,
     }
 
     return <GoalContext.Provider value={value}>{children}</GoalContext.Provider>

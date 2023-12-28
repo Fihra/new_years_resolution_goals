@@ -1,18 +1,20 @@
 import React, { useContext } from 'react';
 
 const MonthContainer = () => {
-    const showGoals = () => {
-        return goals.map((goal, i) => {
-            return <li key={i}>{goal}</li>
+    const allMonths = ["January", "February", "March", "April", "May", "June","July", "August", "September", "October", "November", "December"];
+
+    const showMonths = () => {
+        return allMonths.map((month, i) => {
+            return <li key={i}>{month}</li>
         })
     }
 
     return(
-        <>
+        <div>
             <ul>
-            {showGoals()}
+            {showMonths()}
             </ul>
-        </>
+        </div>
     )
 }
 
